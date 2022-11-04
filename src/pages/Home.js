@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from "react";
-//mport preloader from "..../spinning-line.gif"
+import React, { useEffect } from "react";
 import Header from "../components/Header";
 import SearchBar from "../components/SearchForm";
 import DropDownMenu from "../components/DropDownMenu";
 import Country from "../components/Country";
 import { useContextGlobal } from "../context/AppContext";
 export default function Home() {
-  const { fetchData, data, setData, loading } = useContextGlobal();
+  const { fetchData, data, loading } = useContextGlobal();
   useEffect(() => {
     fetchData();
   }, []);

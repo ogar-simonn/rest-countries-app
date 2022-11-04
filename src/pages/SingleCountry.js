@@ -7,7 +7,6 @@ const SingleCountry = () => {
   const [country, setCountry] = useState([]);
   const [loading, setLoading] = useState(true);
   const { fullName } = useParams();
-  console.log(fullName);
   useEffect(() => {
     const getSingleCountry = async () => {
       const url = `https://restcountries.com/v3.1/name/${fullName}?fullText=true`;
@@ -21,7 +20,7 @@ const SingleCountry = () => {
         });
     };
     getSingleCountry();
-  }, []);
+  }, [fullName]);
   if (loading) {
     return (
       <section className="section-center">
